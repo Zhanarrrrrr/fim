@@ -16,7 +16,7 @@ Function Erase-Baseline-If-exists(){
 
 
 
-Write-host "What would you like to do?" 
+Write-host "Choose the variant of what you want to do" 
 Write-host "A) Collect new baseline ?" 
 Write-host "B) begin monitoring files with saved baseline? " 
  
@@ -60,7 +60,7 @@ elseif ($resp -eq "B". ToUpper() ){
  
 # Begin (continiously) monitoring files with saved Baseline 
 while($true){ 
-    Start-Sleep -Seconds 1 
+    Start-Sleep -Seconds 2
  
     $files= Get-ChildItem -Path .\files 
       
@@ -72,7 +72,7 @@ while($true){
 #Notify if a new file has been created 
 if($fileHashDictionary[$hash.Path] -eq $null){ 
 #A new file has been created 
-    Write-Host "$($hash.Path) has been created!"  
+    Write-Host "$($hash.Path) successfully created!"  
    } 
    else{ 
 
